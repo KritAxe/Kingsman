@@ -58,14 +58,20 @@
     <Compile Include="Windows\Categorees\CottonWindow.xaml.cs">
       <DependentUpon>CottonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Categorees\FinishedClothes.xaml.cs">
+      <DependentUpon>FinishedClothes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Categorees\HairWindow.xaml.cs">
       <DependentUpon>HairWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Categorees\SyntheticWindow.xaml.cs">
       <DependentUpon>SyntheticWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CategoryWindow.xaml.cs">
+    <Compile Include="Windows\Categorees\CategoryWindow.xaml.cs">
       <DependentUpon>CategoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ClientMenu.xaml.cs">
+      <DependentUpon>ClientMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PayWindow.xaml.cs">
       <DependentUpon>PayWindow.xaml</DependentUpon>
@@ -76,11 +82,21 @@
     <Compile Include="Windows\BasketWindow.xaml.cs">
       <DependentUpon>BasketWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\SalesmanMenu.xaml.cs">
+      <DependentUpon>SalesmanMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TailorMenu.xaml.cs">
+      <DependentUpon>TailorMenu.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Categorees\CottonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Categorees\FinishedClothes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,7 +108,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CategoryWindow.xaml">
+    <Page Include="Windows\Categorees\CategoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ClientMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +140,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\BasketWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SalesmanMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TailorMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
