@@ -183,6 +183,7 @@
     <Folder Include="DB\" />
     <Folder Include="Pages\" />
     <Folder Include="Res\" />
+    <Folder Include="Windows\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
