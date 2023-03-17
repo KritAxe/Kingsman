@@ -23,5 +23,23 @@ namespace Kingsman.Windows
         {
             InitializeComponent();
         }
+
+        private void BtnSignIn(object sender, RoutedEventArgs e)
+        {
+            var userAuth = ClassHelper.EF.context.Employe.ToList().
+                Where(i => i.Login == TbLogin.Text && i.Password == PbPassword.Password).
+                FirstOrDefault();
+            if (userAuth != null)
+            {
+                MainWindow serviceWindow = new MainWindow();
+                serviceWindow.Show();
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Пользователя не существует, попробуйте ещё раз", "Ошибка", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            }
+        }
     }
 }

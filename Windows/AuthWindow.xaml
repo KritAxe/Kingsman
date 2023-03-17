@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kingsman.Windows"
         mc:Ignorable="d"
-        Title="AuthWindow" Height="450" Width="800">
+        Title="AuthWindow" Height="600" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Авторизация"
+                       Foreground="Blue"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0 30 0 0"/>
+
+            <TextBlock Text="Логин"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 50 0 0"/>
+
+            <TextBox x:Name="TbLogin"
+                     FontSize="18"
+                     Width="250"
+                     Margin="0 20 0 0"/>
+
+            <TextBlock Text="Пароль"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 50 0 0"/>
+
+            <PasswordBox x:Name="PbPassword"
+                     FontSize="18"
+                     Width="250"
+                     Margin="0 20 0 0"/>
+
+            <Button x:Name="BtnAuth"
+                    Foreground="red"
+                    Click="BtnSignIn"
+                    Content="вход"
+                    Margin="0 90 0 0"
+                    Width="150"
+                    Height="50"
+                    />
+
+        </StackPanel>
     </Grid>
 </Window>
