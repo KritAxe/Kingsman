@@ -23,6 +23,11 @@ namespace Kingsman
         public MainWindow()
         {
             InitializeComponent();
+            GetListService();
+        }
+        private void GetListService()
+        {
+            LvService.ItemsSource = ClassHelper.EF.context.Service.ToList();
         }
     }
 }
