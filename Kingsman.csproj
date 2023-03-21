@@ -249,7 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="Res\" />
     <Folder Include="Windows\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +262,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Res\Images\Auth.png" />
+    <Resource Include="Res\Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
