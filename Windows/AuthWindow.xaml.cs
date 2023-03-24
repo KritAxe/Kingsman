@@ -41,10 +41,11 @@ namespace Kingsman.Windows
                 MessageBox.Show("Пользователя не существует, попробуйте ещё раз", "Ошибка", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             }
         }
-
-        private void BtnAuth_DpiChanged(object sender, DpiChangedEventArgs e)
+        private void BtnRegistr(object sender, RoutedEventArgs e)
         {
-
+            RegistrWindow registrWindow = new RegistrWindow();
+            registrWindow.Show();
+            this.Close();
         }
     }
 }

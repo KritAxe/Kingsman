@@ -20,16 +20,18 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="char" MaxLength="11" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Gender" Type="int" Nullable="false" />
-          <Property Name="SizeID" Type="int" Nullable="false" />
-          <Property Name="AddressID" Type="int" Nullable="false" />
-          <Property Name="IndSizeID" Type="int" Nullable="false" />
+          <Property Name="SizeID" Type="int" />
+          <Property Name="AddressID" Type="int" />
+          <Property Name="IndSizeID" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Employe">
           <Key>
@@ -107,7 +109,7 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Client_Address">
-          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Address">
@@ -131,7 +133,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Client_IndividualSize">
-          <End Role="IndividualSize" Type="Self.IndividualSize" Multiplicity="1" />
+          <End Role="IndividualSize" Type="Self.IndividualSize" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IndividualSize">
@@ -143,7 +145,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Client_Size">
-          <End Role="Size" Type="Self.Size" Multiplicity="1" />
+          <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Size">
@@ -423,16 +425,18 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="Int32" Nullable="false" />
-          <Property Name="SizeID" Type="Int32" Nullable="false" />
-          <Property Name="AddressID" Type="Int32" Nullable="false" />
-          <Property Name="IndSizeID" Type="Int32" Nullable="false" />
+          <Property Name="SizeID" Type="Int32" />
+          <Property Name="AddressID" Type="Int32" />
+          <Property Name="IndSizeID" Type="Int32" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Address" Relationship="KingsmanModel.FK_Client_Address" FromRole="Client" ToRole="Address" />
           <NavigationProperty Name="Gender1" Relationship="KingsmanModel.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
           <NavigationProperty Name="IndividualSize" Relationship="KingsmanModel.FK_Client_IndividualSize" FromRole="Client" ToRole="IndividualSize" />
@@ -528,7 +532,7 @@
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Client_Address">
-          <End Type="KingsmanModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="KingsmanModel.Address" Role="Address" Multiplicity="0..1" />
           <End Type="KingsmanModel.Client" Role="Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Address">
@@ -564,7 +568,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Client_IndividualSize">
-          <End Type="KingsmanModel.IndividualSize" Role="IndividualSize" Multiplicity="1" />
+          <End Type="KingsmanModel.IndividualSize" Role="IndividualSize" Multiplicity="0..1" />
           <End Type="KingsmanModel.Client" Role="Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="IndividualSize">
@@ -576,7 +580,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Client_Size">
-          <End Type="KingsmanModel.Size" Role="Size" Multiplicity="1" />
+          <End Type="KingsmanModel.Size" Role="Size" Multiplicity="0..1" />
           <End Type="KingsmanModel.Client" Role="Client" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Size">
@@ -692,6 +696,8 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="KingsmanModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="IndSizeID" ColumnName="IndSizeID" />
                 <ScalarProperty Name="AddressID" ColumnName="AddressID" />
                 <ScalarProperty Name="SizeID" ColumnName="SizeID" />

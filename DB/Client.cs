@@ -27,9 +27,11 @@ namespace Kingsman.DB
         public string Phone { get; set; }
         public string Email { get; set; }
         public int Gender { get; set; }
-        public int SizeID { get; set; }
-        public int AddressID { get; set; }
-        public int IndSizeID { get; set; }
+        public Nullable<int> SizeID { get; set; }
+        public Nullable<int> AddressID { get; set; }
+        public Nullable<int> IndSizeID { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     
         public virtual Address Address { get; set; }
         public virtual Gender Gender1 { get; set; }

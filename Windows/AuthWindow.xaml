@@ -47,13 +47,15 @@
                     Width="150"
                     Height="50"
                     />
-            <Button Content="зарегистрироваться"
+            <Button x:Name="BtnReg"
+                       Content="зарегистрироваться"
                        HorizontalAlignment="Center"
                        FontSize="10"
                        Foreground="DarkGray"
                        Margin="0 30 0 0"
                        Background="#01000000"
                        BorderBrush="#01000000"
+                       Click="BtnRegistr"
                        />
 
         </StackPanel>
