@@ -85,11 +85,19 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameService" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
           <Property Name="Image" Type="nvarchar" MaxLength="2048" />
+          <Property Name="ServiceTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameServiceType" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -228,6 +236,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Service_ServiceType">
+          <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ServiceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -268,6 +288,7 @@
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderService" EntityType="Self.OrderService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceType" EntityType="Self.ServiceType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Client_Address" Association="Self.FK_Client_Address">
@@ -309,6 +330,10 @@
           <AssociationSet Name="FK_OrderService_Service" Association="Self.FK_OrderService_Service">
             <End Role="Service" EntitySet="Service" />
             <End Role="OrderService" EntitySet="OrderService" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_ServiceType" Association="Self.FK_Service_ServiceType">
+            <End Role="ServiceType" EntitySet="ServiceType" />
+            <End Role="Service" EntitySet="Service" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -354,6 +379,7 @@
           <EntitySet Name="Order" EntityType="KingsmanModel.Order" />
           <EntitySet Name="OrderService" EntityType="KingsmanModel.OrderService" />
           <EntitySet Name="Service" EntityType="KingsmanModel.Service" />
+          <EntitySet Name="ServiceType" EntityType="KingsmanModel.ServiceType" />
           <EntitySet Name="Size" EntityType="KingsmanModel.Size" />
           <EntitySet Name="sysdiagrams" EntityType="KingsmanModel.sysdiagrams" />
           <AssociationSet Name="FK_Client_Address" Association="KingsmanModel.FK_Client_Address">
@@ -395,6 +421,10 @@
           <AssociationSet Name="FK_OrderService_Service" Association="KingsmanModel.FK_OrderService_Service">
             <End Role="Service" EntitySet="Service" />
             <End Role="OrderService" EntitySet="OrderService" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_ServiceType" Association="KingsmanModel.FK_Service_ServiceType">
+            <End Role="ServiceType" EntitySet="ServiceType" />
+            <End Role="Service" EntitySet="Service" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -506,12 +536,22 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameService" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTypeID" Type="Int32" />
           <NavigationProperty Name="OrderService" Relationship="KingsmanModel.FK_OrderService_Service" FromRole="Service" ToRole="OrderService" />
+          <NavigationProperty Name="ServiceType" Relationship="KingsmanModel.FK_Service_ServiceType" FromRole="Service" ToRole="ServiceType" />
+        </EntityType>
+        <EntityType Name="ServiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameServiceType" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Service" Relationship="KingsmanModel.FK_Service_ServiceType" FromRole="ServiceType" ToRole="Service" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -651,6 +691,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Service_ServiceType">
+          <End Type="KingsmanModel.ServiceType" Role="ServiceType" Multiplicity="0..1" />
+          <End Type="KingsmanModel.Service" Role="Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="ServiceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -767,10 +819,19 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="KingsmanModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="NameService" ColumnName="NameService" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceType">
+            <EntityTypeMapping TypeName="KingsmanModel.ServiceType">
+              <MappingFragment StoreEntitySet="ServiceType">
+                <ScalarProperty Name="NameServiceType" ColumnName="NameServiceType" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -35,6 +35,7 @@ namespace Kingsman.DB
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderService> OrderService { get; set; }
         public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<ServiceType> ServiceType { get; set; }
         public virtual DbSet<Size> Size { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     

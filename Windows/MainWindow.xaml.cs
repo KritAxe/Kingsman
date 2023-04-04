@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kingsman.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,14 @@ namespace Kingsman
         private void GetListService()
         {
             LvService.ItemsSource = ClassHelper.EF.context.Service.ToList();
+        }
+        private void BtnAddService_Click(object sender, RoutedEventArgs e)
+        {
+            AddService addService= new AddService();
+            addService.ShowDialog();
+
+            
+            GetListService();
         }
     }
 }

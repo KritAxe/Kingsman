@@ -100,7 +100,7 @@
                      Height="30"
                      Margin="0 8 0 0"/>
 
-            <Button x:Name="BtnRegi"
+            <!--<Button x:Name="BtnRegi"
                  
                 Background="#1b1f70"
                     Foreground="red"
@@ -109,7 +109,7 @@
                     Margin="0 70 0 0"
                     Width="150"
                     Height="60"
-                    />
+                    />-->
 
 
         </StackPanel>
