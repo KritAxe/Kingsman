@@ -32,10 +32,27 @@ namespace Kingsman
         }
         private void BtnAddService_Click(object sender, RoutedEventArgs e)
         {
-            AddService addService= new AddService();
+            AddService addService = new AddService();
             addService.ShowDialog();
 
-            
+
+            GetListService();
+        }
+        private void BtnEditService_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null)
+            {
+                return;
+            }
+
+            var service = button.DataContext as DB.Service; // получаем выбранную запись
+
+
+            EditService editService = new EditService(service);
+            editService.ShowDialog();
+
             GetListService();
         }
     }

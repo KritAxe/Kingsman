@@ -35,7 +35,7 @@
                     <Border BorderBrush="Gray"
                             BorderThickness="2"
                             Width="200"
-                            Height="300"
+                            Height="350"
                             Margin="16"
                             CornerRadius="8">
                         <StackPanel>
@@ -61,6 +61,17 @@
                                        FontSize="18"
                                        Margin="5 3"
                                        TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
+                            <Button x:Name="BtnEditService"
+                                      Grid.Row="3"
+                                      Width="40"
+                                      Height="40"
+                                      Background="{x:Null}"
+                                      BorderThickness="0"
+                                      HorizontalAlignment="Left"
+                                      Margin="0 0 20 0"
+                                      Click="BtnEditService_Click">
+                                <Image Source="/Res/Images/Edit.png"/>
+                            </Button>
                         </StackPanel>
 
                     </Border>
@@ -79,5 +90,6 @@
                 Click="BtnAddService_Click">
             <Image Source="/Res/Images/Add.png"/>
         </Button>
+        
     </Grid>
 </Window>

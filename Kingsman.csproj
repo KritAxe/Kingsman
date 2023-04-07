@@ -140,6 +140,9 @@
     <Compile Include="Windows\ClientMenu.xaml.cs">
       <DependentUpon>ClientMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\EditService.xaml.cs">
+      <DependentUpon>EditService.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PayWindow.xaml.cs">
       <DependentUpon>PayWindow.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ClientMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -272,6 +279,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Res\Clothes\Пиджак.jpg" />
+    <Resource Include="Res\Images\Edit.png" />
     <Resource Include="Res\Images\Add.png" />
     <Resource Include="Res\Clothes\noImage.jpeg" />
     <Resource Include="Res\Clothes\1clothes.jpeg" />
