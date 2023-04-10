@@ -41,7 +41,7 @@ namespace Kingsman.Windows
             // Заполнение типа услуги
 
             CmbTypeService.ItemsSource = ClassHelper.EF.context.ServiceType.ToList();
-            CmbTypeService.DisplayMemberPath = "TypeName";
+            CmbTypeService.DisplayMemberPath = "NameServiceType";
 
             // выгрузка изображения 
             ImgImageService.Source = new BitmapImage(new Uri(service.Image));

@@ -137,11 +137,17 @@
     <Compile Include="Windows\Categorees\CategoryWindow.xaml.cs">
       <DependentUpon>CategoryWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Client.xaml.cs">
+      <DependentUpon>Client.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ClientMenu.xaml.cs">
       <DependentUpon>ClientMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\EditService.xaml.cs">
       <DependentUpon>EditService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Empoye.xaml.cs">
+      <DependentUpon>Empoye.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PayWindow.xaml.cs">
       <DependentUpon>PayWindow.xaml</DependentUpon>
@@ -186,11 +192,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ClientMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Empoye.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

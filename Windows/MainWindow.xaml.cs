@@ -55,5 +55,15 @@ namespace Kingsman
 
             GetListService();
         }
+        private void BtnClient_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            client.ShowDialog();
+        }
+        private void BtnEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            Empoye empoye = new Empoye();
+            empoye.ShowDialog();
+        }
     }
 }

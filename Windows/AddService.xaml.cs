@@ -26,7 +26,7 @@ namespace Kingsman.Windows
             InitializeComponent();
 
             CmbTypeService.ItemsSource = ClassHelper.EF.context.ServiceType.ToList();
-            CmbTypeService.DisplayMemberPath = "TypeName";
+            CmbTypeService.DisplayMemberPath = "NameServiceType";
             CmbTypeService.SelectedIndex = 0;
         }
         private void BtnChooseImage_Click(object sender, RoutedEventArgs e)
