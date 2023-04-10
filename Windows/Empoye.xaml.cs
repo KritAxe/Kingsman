@@ -28,5 +28,5 @@ namespace Kingsman.Windows
         {
             DgEmploye.ItemsSource = ClassHelper.EF.context.Employe.ToList();
         }
-    }
+    }///////////
 }
