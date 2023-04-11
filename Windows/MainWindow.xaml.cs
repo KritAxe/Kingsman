@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Kingsman.ClassHelper;
 namespace Kingsman
 {
     /// <summary>
@@ -64,6 +64,26 @@ namespace Kingsman
         {
             Empoye empoye = new Empoye();
             empoye.ShowDialog();
+        }
+        private void BtnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var service = button.DataContext as DB.Service; // получаем выбранную запись
+
+
+            CartServiceClass.ServiceCart.Add(service);
+
+            MessageBox.Show($"Услуга {service.NameService} добавлена в корзину!");
+        }
+
+        private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
+        {
+            CartWindow cartWindow = new CartWindow();
+            cartWindow.ShowDialog();
         }
     }
 }
