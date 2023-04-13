@@ -74,12 +74,12 @@
                                        TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
                             <Button x:Name="BtnEditService"
                                       Grid.Row="3"
-                                      Width="40"
-                                      Height="40"
+                                      Width="30"
+                                      Height="30"
                                       Background="{x:Null}"
                                       BorderThickness="0"
                                       HorizontalAlignment="Left"
-                                      Margin="0 0 20 0"
+                                      Margin="10 0 20 0"
                                       Click="BtnEditService_Click">
                                 <Image Source="/Res/Images/Edit.png"/>
                             </Button>
@@ -87,7 +87,7 @@
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Left"
-                                    Margin="30 5 0 0"
+                                    Margin="140 0 20 550"
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnAddToCart_Click">

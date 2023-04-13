@@ -301,6 +301,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Res\Images\cart.png" />
     <Resource Include="Res\Images\54324.png" />
     <Resource Include="Res\Images\3081797.png" />
     <Resource Include="Res\Clothes\Пиджак.jpg" />

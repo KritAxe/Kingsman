@@ -23,7 +23,7 @@ namespace Kingsman.DB
         public int ID { get; set; }
         public int EmployeID { get; set; }
         public int ClientID { get; set; }
-        public System.DateTime Date { get; set; }
+        public System.DateTime DateTime { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Employe Employe { get; set; }

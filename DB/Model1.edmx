@@ -68,16 +68,16 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeID" Type="int" Nullable="false" />
           <Property Name="ClientID" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderService">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="ServiceID" Type="int" Nullable="false" />
         </EntityType>
@@ -514,10 +514,10 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmployeID" Type="Int32" Nullable="false" />
           <Property Name="ClientID" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Client" Relationship="KingsmanModel.FK_Order_Client" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="Employe" Relationship="KingsmanModel.FK_Order_Employe" FromRole="Order" ToRole="Employe" />
           <NavigationProperty Name="OrderService" Relationship="KingsmanModel.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
@@ -526,7 +526,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="ServiceID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="KingsmanModel.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
@@ -800,7 +800,7 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="KingsmanModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
                 <ScalarProperty Name="EmployeID" ColumnName="EmployeID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

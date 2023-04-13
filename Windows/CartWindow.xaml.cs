@@ -22,10 +22,10 @@ namespace Kingsman.Windows
         public CartWindow()
         {
             InitializeComponent();
-            GetListServisee();
+            GetListServise();
         }
 
-        private void GetListServisee()
+        private void GetListServise()
         {
             LvCart.ItemsSource = ClassHelper.CartServiceClass.ServiceCart;
 
@@ -42,7 +42,7 @@ namespace Kingsman.Windows
 
             ClassHelper.CartServiceClass.ServiceCart.Remove(service);
 
-            GetListServisee();
+            GetListServise();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
