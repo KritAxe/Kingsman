@@ -92,6 +92,7 @@
                 Background="{x:Null}"
                 BorderThickness="0"
                 HorizontalAlignment="Right"
+                Click="BtnBack_Click"
                 >
 
         </Button>
