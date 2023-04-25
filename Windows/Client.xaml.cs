@@ -22,6 +22,11 @@ namespace Kingsman.Windows
         public Client()
         {
             InitializeComponent();
+            GetListClient();
+        }
+        private void GetListClient()
+        {
+            DgClient.ItemsSource = ClassHelper.EF.context.Client.ToList();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kingsman.ClassHelper;
+using Kingsman.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +30,7 @@ namespace Kingsman.Windows
         private void GetListServise()
         {
             LvCart.ItemsSource = ClassHelper.CartServiceClass.ServiceCart;
-
+           
         }
 
         private void BtnRomoveToCart_Click(object sender, RoutedEventArgs e)
@@ -51,6 +53,11 @@ namespace Kingsman.Windows
             mainWindow.ShowDialog();
             this.Close();
 
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }

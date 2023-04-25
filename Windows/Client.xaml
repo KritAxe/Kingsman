@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Client" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <DataGrid x:Name="DgClient">
+
+
+        </DataGrid>
+
     </Grid>
 </Window>

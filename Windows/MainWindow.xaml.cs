@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Kingsman.ClassHelper;
+using Kingsman.DB;
+
 namespace Kingsman
 {
     /// <summary>
@@ -57,7 +59,7 @@ namespace Kingsman
         }
         private void BtnClient_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
+            DB.Client client = new DB.Client();
             client.ShowDialog();
         }
         private void BtnEmploye_Click(object sender, RoutedEventArgs e)
@@ -78,6 +80,7 @@ namespace Kingsman
             CartServiceClass.ServiceCart.Add(service);
 
             MessageBox.Show($"Услуга {service.NameService} добавлена в корзину!");
+
         }
 
         private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
