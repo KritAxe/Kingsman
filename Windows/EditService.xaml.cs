@@ -22,19 +22,16 @@ namespace Kingsman.Windows
 
         DB.Service editService = null;
 
-        private bool isEdit = false;
 
         public EditService()
         {
             InitializeComponent();
-            isEdit = false;
         }
 
         public EditService(DB.Service service)
         {
             InitializeComponent();
 
-            isEdit = true;
 
             editService = service;
 

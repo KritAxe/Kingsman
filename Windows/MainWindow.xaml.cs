@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Kingsman.ClassHelper;
 using Kingsman.DB;
+using Client = Kingsman.Windows.Client;
 
 namespace Kingsman
 {
@@ -59,7 +60,7 @@ namespace Kingsman
         }
         private void BtnClient_Click(object sender, RoutedEventArgs e)
         {
-            DB.Client client = new DB.Client();
+            Client client = new Client();
             client.ShowDialog();
         }
         private void BtnEmploye_Click(object sender, RoutedEventArgs e)

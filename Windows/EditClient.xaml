@@ -1,0 +1,84 @@
+﻿<Window x:Class="Kingsman.Windows.EditClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kingsman.Windows"
+        mc:Ignorable="d"
+        Title="EditClient" Height="700" Width="600">
+    <Grid>
+        <Image Source="/Res/Images/Logo.png" Width="50" Margin="272,-292,273.556,291.889"/>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Редактирование клиента"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0 10 0 0"/>
+
+            <TextBlock Text="Введите новое имя клиента"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 50 0 0"/>
+            <TextBox x:Name="TbFirstNameClient"
+                     FontSize="18"                    
+                     Width="200"
+                     Height="30"
+                     Margin="0 8 0 0"/>
+
+            <TextBlock Text="Введите новую фамилию"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 16 0 0"/>
+            <TextBox x:Name="TbLastNameClient"
+                         FontSize="18"                    
+                         Width="200"
+                         Height="30"
+                         Margin="0 8 0 0"/>
+
+            <TextBlock Text="Введите новое отчество"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 16 0 0"/>
+            <TextBox x:Name="TbPatronymicClient"
+                     FontSize="18"                    
+                     Width="200"
+                     Height="30"
+                     Margin="0 8 0 0"/>
+            <TextBlock Text="Введите новый телефон"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 16 0 0"/>
+            <TextBox x:Name="TbPhoneClient"
+                     FontSize="18"                    
+                     Width="200"
+                     Height="30"
+                     Margin="0 8 0 0"/>
+            <TextBlock Text="Введите новую почту"
+                       FontSize="18"
+                       HorizontalAlignment="Center"
+                       Margin="0 16 0 0"/>
+            <TextBox x:Name="TbEmailClient"
+                     FontSize="18"                    
+                     Width="200"
+                     Height="30"
+                     Margin="0 8 0 0"/>
+
+
+
+
+
+
+
+
+            <Button x:Name="BtnEdittClient" 
+                    Content="Добавить"
+                    FontSize="18"                    
+                    Width="150"
+                    Height="40"
+                    Margin="0 40 0 0"
+                    Click="BtnEdittClient_Click"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

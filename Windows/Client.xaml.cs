@@ -24,9 +24,31 @@ namespace Kingsman.Windows
             InitializeComponent();
             GetListClient();
         }
+        //private void GetListClient()
+        //{
+        //    DgClient.ItemsSource = ClassHelper.EF.context.Client.ToList();
+        //}
         private void GetListClient()
         {
-            DgClient.ItemsSource = ClassHelper.EF.context.Client.ToList();
+            LvClient.ItemsSource = ClassHelper.EF.context.Client.ToList();
+        }
+
+        private void BtnEditClient_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null)
+            {
+                return;
+            }
+
+            var client = button.DataContext as DB.Client; // получаем выбранную запись
+
+
+            EditClient editClient = new EditClient(client);
+            editClient.ShowDialog();
+
+            GetListClient();
         }
     }
 }
