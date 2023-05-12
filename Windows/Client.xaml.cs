@@ -49,6 +49,6 @@ namespace Kingsman.Windows
             editClient.ShowDialog();
 
             GetListClient();
-        }
+        }//
     }
 }
