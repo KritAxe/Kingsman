@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace Kingsman.Windows
 
         DB.Service editService = null;
 
-
+        private string pathImage = null;
         public EditService()
         {
             InitializeComponent();
@@ -69,6 +70,17 @@ namespace Kingsman.Windows
             MessageBox.Show("Данные успешно сохранны");
 
             this.Close();
+        }
+
+        private void BtnChooseImageEditService_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                ImgImageService.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+
+                pathImage = openFileDialog.FileName;
+            }
         }
     }
 }

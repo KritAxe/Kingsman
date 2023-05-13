@@ -30,6 +30,7 @@ namespace Kingsman.DB
         public int AddressID { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public string Image { get; set; }
     
         public virtual Address Address { get; set; }
         public virtual Gender Gender1 { get; set; }

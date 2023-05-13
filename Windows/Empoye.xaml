@@ -5,12 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kingsman.Windows"
         mc:Ignorable="d"
-        Title="Empoye" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Empoye" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="DgEmploye">
-            
-            
-        </DataGrid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Работники"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   FontWeight="Bold"/>
+
+        <ListView x:Name="LvEmploye"
+                  Grid.Row="1">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray"
+                            BorderThickness="2"
+                            Width="250"
+                            Height="450"
+                            Margin="16"
+                            CornerRadius="8">
+
+                        <StackPanel>
+                            <Image Height="180"
+                                   Width="200" 
+                                   Margin="8">
+                                <Image.Source>
+                                    <Binding Path ="Image">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Res/Clothes/noImage.jpeg</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Text="{Binding FirstName}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+
+                            <TextBlock Text="{Binding LastName}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                            <TextBlock Text="{Binding Patronymic}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+
+                            <TextBlock Text="{Binding Phone}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                            <TextBlock Text="{Binding Email}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+
+                            <Button x:Name="BtnEditEmploye"
+                                      Grid.Row="3"
+                                      Width="30"
+                                      Height="30"
+                                      Background="{x:Null}"
+                                      BorderThickness="0"
+                                      HorizontalAlignment="Left"
+                                      Margin="10 0 20 0"
+                                      Click="BtnEditEmploye_Click">
+                                <Image Source="/Res/Images/Edit.png"/>
+                            </Button>
+                        </StackPanel>
+
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <Button x:Name="BtnAddEmploye"
+                Grid.Row="2"
+                Width="40"
+                Height="40"
+                Background="Black"
+                BorderThickness="0"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"
+                Click="BtnAddEmploye_Click">
+            <Image Source="/Res/Images/Add.png"/>
+        </Button>
     </Grid>
 </Window>

@@ -26,7 +26,31 @@ namespace Kingsman.Windows
         }
         private void GetListEmploye()
         {
-            DgEmploye.ItemsSource = ClassHelper.EF.context.Employe.ToList();
+            LvEmploye.ItemsSource = ClassHelper.EF.context.Employe.ToList();
+        }
+
+        private void BtnEditEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null)
+            {
+                return;
+            }
+
+            var employe = button.DataContext as DB.Employe; // получаем выбранную запись
+
+
+            EditEmploye editEmploye = new EditEmploye(employe);
+            editEmploye.ShowDialog();
+
+            GetListEmploye();
+        }//
+
+        private void BtnAddEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            EditEmploye editemploye = new EditEmploye();
+            editemploye.ShowDialog();
         }
     }///////////
 }

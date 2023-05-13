@@ -24,10 +24,6 @@ namespace Kingsman.Windows
             InitializeComponent();
             GetListClient();
         }
-        //private void GetListClient()
-        //{
-        //    DgClient.ItemsSource = ClassHelper.EF.context.Client.ToList();
-        //}
         private void GetListClient()
         {
             LvClient.ItemsSource = ClassHelper.EF.context.Client.ToList();

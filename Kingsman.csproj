@@ -150,6 +150,9 @@
     <Compile Include="Windows\EditClient.xaml.cs">
       <DependentUpon>EditClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\EditEmploye.xaml.cs">
+      <DependentUpon>EditEmploye.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\EditService.xaml.cs">
       <DependentUpon>EditService.xaml</DependentUpon>
     </Compile>
@@ -212,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditEmploye.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
