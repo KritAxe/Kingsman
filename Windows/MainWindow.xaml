@@ -147,6 +147,18 @@
                 Click="BtnEmploye_Click">
 
         </Button>
+        <Button x:Name="BtnReports"
+                Content="Отчёты"
+                Grid.Row="3"
+                Width="70"
+                Height="40"
+                Background="Wheat"
+                BorderThickness="0"
+                HorizontalAlignment="Left"
+                Margin="240 0 20 0"
+                Click="BtnReports_Click">
+
+        </Button>
 
     </Grid>
 </Window>

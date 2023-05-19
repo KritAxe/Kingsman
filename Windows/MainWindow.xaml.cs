@@ -89,5 +89,11 @@ namespace Kingsman
             CartWindow cartWindow = new CartWindow();
             cartWindow.ShowDialog();
         }
+
+        private void BtnReports_Click(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            reports.ShowDialog();
+        }
     }
 }
